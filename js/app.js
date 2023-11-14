@@ -1,6 +1,3 @@
-transactions = [{type: 'income', amount: 4000, detail: 'salary'},]
-
-
 let state = {
     income: 0, expense: 0, balance: 0, transactions: []
 }
@@ -110,11 +107,11 @@ const render = () => {
     saveToLocalStorage()
 }
 function saveToLocalStorage() {
-    localStorage.setItem('state', JSON.stringify(state))
+    localStorage.setItem('transactions', JSON.stringify(state))
 }
 
 function loadFromLocalStorage() {
-    const savedState = localStorage.getItem('state')
+    const savedState = localStorage.getItem('transactions')
     if (savedState) {
         state = JSON.parse(savedState)
         incomeTransaction = 0;
